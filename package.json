@@ -1,85 +1,91 @@
 {
-  "name": "speak2script",
-  "displayName": "Speak2Script",
-  "description": "Transcribe your speech to code with power of AI. Use it with Cursor to command AI create code efficiency and experience.",
-  "version": "1.0.2",
-  "publisher": "TopTuK",
-  "icon": "images/logo.jpg",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TopTuK/whisper-assistant-vscode.git"
-  },
-  "engines": {
-    "vscode": "^1.70.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onStartupFinished",
-    "onDidChangeWorkspaceFolders"
-  ],
-  "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "speak2script.toggleRecording",
-        "title": "Toggle Recording"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "speak2script.toggleRecording",
-        "key": "ctrl+m",
-        "mac": "cmd+m"
-      }
-    ],
-    "configuration": {
-      "type": "object",
-      "title": "Speak2Script Settings",
-      "properties": {
-        "speak2script.apiProvider": {
-          "type": "string",
-          "default": "openai",
-          "enum": [
-            "openai",
-            "groq"
-          ],
-          "description": "Select the API provider for transcription"
-        },
-        "speak2script.apiKey": {
-          "type": "string",
-          "default": "",
-          "description": "API key for the selected provider"
-        }
-      }
-    }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint && rm -rf .vscode-test",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
-    "package": "vsce package",
-    "publish": "vsce package && vsce publish",
-    "clean": "rm -rf out .vscode-test"
-  },
-  "dependencies": {
-    "openai": "^4.103.0"
-  },
-  "devDependencies": {
-    "@types/mocha": "^10.0.1",
-    "@types/node": "16.x",
-    "@types/vscode": "^1.70.0",
-    "@typescript-eslint/eslint-plugin": "^6.4.1",
-    "@typescript-eslint/parser": "^6.4.1",
-    "@vscode/test-electron": "^2.3.4",
-    "@vscode/vsce": "^2.24.0",
-    "eslint": "^8.47.0",
-    "glob": "^10.3.3",
-    "mocha": "^10.2.0",
-    "typescript": "^5.1.6"
-  }
+	"name": "speak2script",
+	"displayName": "Speak2Script",
+	"description": "Transcribe your speech to code with power of AI. Use it with Cursor to command AI create code efficiency and experience.",
+	"version": "1.0.2",
+	"publisher": "TopTuK",
+	"icon": "images/logo.jpg",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TopTuK/whisper-assistant-vscode.git"
+	},
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished",
+		"onDidChangeWorkspaceFolders"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "speak2script.toggleRecording",
+				"title": "Toggle Recording"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "speak2script.toggleRecording",
+				"key": "ctrl+m",
+				"mac": "cmd+m"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Speak2Script Settings",
+			"properties": {
+				"speak2script.apiProvider": {
+					"type": "string",
+					"default": "openai",
+					"enum": [
+						"openai",
+						"groq"
+					],
+					"description": "Select the API provider for transcription"
+				},
+				"speak2script.apiKey": {
+					"type": "string",
+					"default": "",
+					"description": "API key for the selected provider"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint && rm -rf .vscode-test",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js",
+		"package": "vsce package",
+		"publish": "vsce package && vsce publish",
+		"clean": "rm -rf out .vscode-test"
+	},
+	"dependencies": {
+		"openai": "^4.103.0"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.70.0",
+		"@typescript-eslint/eslint-plugin": "^6.4.1",
+		"@typescript-eslint/parser": "^6.4.1",
+		"@vscode/test-electron": "^2.3.4",
+		"@vscode/vsce": "^2.24.0",
+		"eslint": "^8.47.0",
+		"glob": "^10.3.3",
+		"mocha": "^10.2.0",
+		"typescript": "^5.1.6"
+	},
+	"__metadata": {
+		"id": "474dd8f3-3eaa-4856-a866-daf111401995",
+		"publisherDisplayName": "TopTuK",
+		"publisherId": "78c2c1f5-e2c7-459e-927a-604da1a93e58",
+		"isPreReleaseVersion": false
+	}
 }

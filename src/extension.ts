@@ -29,7 +29,6 @@ export async function activate(context: vscode.ExtensionContext) {
   try {
     // Create output channel and show it immediately
     const outputChannel = vscode.window.createOutputChannel('speak2script');
-    outputChannel.show(true); // Force show the output channel
     
     outputChannel.appendLine('Activating Speak2Script...');
     state.outputChannel = outputChannel;
@@ -84,7 +83,6 @@ export async function activate(context: vscode.ExtensionContext) {
     }
 
     outputChannel.appendLine('Extension activated successfully!');
-    outputChannel.show();
   } catch (error) {
     const errorMessage = `Error activating extension: ${error}`;
     console.error(errorMessage);
